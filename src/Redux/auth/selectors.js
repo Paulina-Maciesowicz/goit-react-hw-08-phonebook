@@ -1,5 +1,5 @@
-export const selectIsLoggedIn = state => true;
+export const selectIsLoggedIn = state => state.auth.isLoggedIn;
 
-export const selectUser = state => "user";
+export const selectUser = state => state.auth.user;
 
-export const selectIsRefreshing = state => false;
+export const selectIsRefreshing = state => state.auth.isRefreshing;
