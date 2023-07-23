@@ -15,10 +15,17 @@ export const fetchContacts = createAsyncThunk(
 export const addContact = createAsyncThunk(
   'contacts/addContact',
   async ({ name, phone }) => {
+    console.log(name);
+    console.log(phone);
+    const sendData = {
+      name: name,
+      number: phone,
+    };
     const response = await axios.post(
       'https://connections-api.herokuapp.com/contacts',
-      { name, phone }
+      sendData
     );
+    console.log(response);
     return response.data;
   }
 );
